@@ -13,8 +13,6 @@ class Bureaucrat
 
         Bureaucrat();
 
-        // gradeが不正な値で無いかを確認する
-        void    _checkGrade(int grade) const;
     public:
         // OCM
         Bureaucrat(const std::string& name, int grade);
@@ -29,8 +27,8 @@ class Bureaucrat
         int                 getGrade() const;
 
         // gradeの操作
-        void    incrementGrade();
-        void    decrementGrade();
+        void    IncrementGrade();
+        void    DecrementGrade();
 
         // 例外クラス
         // 上の例外を確認
@@ -43,8 +41,11 @@ class Bureaucrat
             public:
                 virtual const char* what() const throw();
         };
+
+        static const int highestGrade = 1;
+        static const int lowestGrade = 150;
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
 
-#endif BUREAUCRAT_HPP
+#endif //BUREAUCRAT_HPP

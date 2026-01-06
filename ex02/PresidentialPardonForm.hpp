@@ -1,0 +1,9 @@
+#ifndef PRESIDENTIALPARDOMFORM_HPP
+# define PRESIDENTIALPARDOMFORM_HPP
+
+class PresidentialPardonForm
+{
+
+}
+
+#endif //PRESIDENTIALPARDOMFORM_HPP

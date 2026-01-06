@@ -1,0 +1,9 @@
+#ifndef SHURUBBERYCREATIONFORM_HPP
+# define PRESIDENTIALPARDOMFORM_HPP
+
+class ShrubberyCreationForm
+{
+    
+}
+
+#endif //PRESIDENTIALPARDOMFORM_HPP

@@ -15,7 +15,7 @@ class Form
 
     public:
         // OCF
-        Form(const std::string& name, const int signGrade, const int execGrade);
+        Form(const std::string& name, int signGrade, int execGrade);
         Form(const Form& copy);
         Form& operator=(const Form& copy);
         ~Form();

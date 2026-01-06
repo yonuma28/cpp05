@@ -1,0 +1,9 @@
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define PRESIDENTIALPARDOMFORM_HPP
+
+class RobotomyRequestForm
+{
+
+}
+
+#endif //PRESIDENTIALPARDOMFORM_HPP

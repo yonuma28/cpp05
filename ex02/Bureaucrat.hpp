@@ -5,9 +5,7 @@
 # include <iostream>
 # include <exception>
 
-# include "Form.hpp"
-
-class   Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -50,7 +48,8 @@ class Bureaucrat
         static const int lowestGrade = 150;
 
         // ex02
-        void    signForm(Form &form) const;
+        void    signForm(AForm &form) const;
+        void    executeForm(AForm const &form) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

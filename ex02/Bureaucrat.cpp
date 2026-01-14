@@ -1,4 +1,5 @@
 # include "Bureaucrat.hpp"
+# include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name) // nameは定数なのでここで初期化
 {
@@ -67,12 +68,22 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
     return os;
 }
 
-void Bureaucrat::signForm(Form &form) const {
-    try {
-      form.beSigned(*this);
-      std::cout << this->getName() << " signed " << form.getName() << std::endl;
-    } catch (const std::exception &e) {
-      std::cout << this->getName() << " couldn’t sign " << form.getName()
-                << " because " << e.what() << "." << std::endl;
-    }
+void Bureaucrat::signForm(AForm &form) const {
+        try {
+            form.beSigned(*this);
+            std::cout << this->getName() << " signed " << form.getName() << std::endl;
+        } catch (const std::exception &e) {
+            std::cout << this->getName() << " couldn’t sign " << form.getName()
+                                << " because " << e.what() << "." << std::endl;
+        }
+}
+
+void Bureaucrat::executeForm(AForm const &form) const {
+        try {
+            form.execute(*this);
+            std::cout << this->getName() << " executed " << form.getName() << std::endl;
+        } catch (const std::exception &e) {
+            std::cout << this->getName() << " couldn’t execute " << form.getName()
+                                << " because " << e.what() << "." << std::endl;
+        }
 }

@@ -12,7 +12,7 @@ void printSeparator(std::string message) {
 int main(void) {
   printSeparator("test ShrubberyCreationForm");
   {
-    ShrubberyCreationForm a;
+    ShrubberyCreationForm a("garden");
     Bureaucrat b = Bureaucrat("b", 1);
     b.signForm(a);
     b.executeForm(a);
@@ -20,7 +20,7 @@ int main(void) {
   }
   {
     printSeparator("exception form not signed");
-    ShrubberyCreationForm a;
+    ShrubberyCreationForm a("garden");
     Bureaucrat b = Bureaucrat("b", 1);
     try {
       b.executeForm(a);
@@ -31,7 +31,7 @@ int main(void) {
   }
   {
     printSeparator("exception grade is too low");
-    ShrubberyCreationForm a;
+    ShrubberyCreationForm a("garden");
     Bureaucrat b = Bureaucrat("b", 138);
     try {
       b.signForm(a);
@@ -44,7 +44,7 @@ int main(void) {
   std::cout << "\n\n";
   printSeparator("test RobotomyRequestForm");
   {
-    RobotomyRequestForm a;
+    RobotomyRequestForm a("marvin");
     Bureaucrat b = Bureaucrat("b", 1);
     try {
       b.signForm(a);
@@ -56,7 +56,7 @@ int main(void) {
   }
   {
     printSeparator("exception form not signed");
-    RobotomyRequestForm a;
+    RobotomyRequestForm a("marvin");
     Bureaucrat b = Bureaucrat("b", 1);
     try {
       b.executeForm(a);
@@ -67,7 +67,7 @@ int main(void) {
   }
   {
     printSeparator("exception grade is too low");
-    RobotomyRequestForm a;
+    RobotomyRequestForm a("marvin");
     Bureaucrat b = Bureaucrat("b", 46);
     try {
       b.signForm(a);
@@ -80,7 +80,7 @@ int main(void) {
   std::cout << "\n\n";
   printSeparator("test PresidentialPardonForm");
   {
-    PresidentialPardonForm a;
+    PresidentialPardonForm a("trillian");
     Bureaucrat b = Bureaucrat("b", 1);
     try {
       b.signForm(a);
@@ -92,7 +92,7 @@ int main(void) {
   }
   {
     printSeparator("exception form not signed");
-    PresidentialPardonForm a;
+    PresidentialPardonForm a("trillian");
     Bureaucrat b = Bureaucrat("b", 1);
     try {
       b.executeForm(a);
@@ -103,7 +103,7 @@ int main(void) {
   }
   {
     printSeparator("exception grade is too low");
-    PresidentialPardonForm a;
+    PresidentialPardonForm a("trillian");
     Bureaucrat b = Bureaucrat("b", 6);
     try {
       b.signForm(a);

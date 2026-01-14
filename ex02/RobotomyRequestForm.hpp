@@ -1,9 +1,21 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
-# define PRESIDENTIALPARDOMFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
-class RobotomyRequestForm
+# include "AForm.hpp"
+# include <cstdlib>
+
+class RobotomyRequestForm : public AForm
 {
+private:
+    RobotomyRequestForm();
 
-}
+public:
+    RobotomyRequestForm(const std::string& target);
+    RobotomyRequestForm(const RobotomyRequestForm& src);
+    RobotomyRequestForm& operator=(const RobotomyRequestForm& rhs);
+    virtual ~RobotomyRequestForm();
 
-#endif //PRESIDENTIALPARDOMFORM_HPP
+    virtual void performAction() const;
+};
+
+#endif

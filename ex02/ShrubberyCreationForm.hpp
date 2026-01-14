@@ -1,9 +1,21 @@
-#ifndef SHURUBBERYCREATIONFORM_HPP
-# define PRESIDENTIALPARDOMFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
-class ShrubberyCreationForm
+# include "AForm.hpp"
+# include <fstream>
+
+class ShrubberyCreationForm : public AForm
 {
-    
-}
+private:
+    ShrubberyCreationForm();
 
-#endif //PRESIDENTIALPARDOMFORM_HPP
+public:
+    ShrubberyCreationForm(const std::string& target);
+    ShrubberyCreationForm(const ShrubberyCreationForm& src);
+    ShrubberyCreationForm& operator=(const ShrubberyCreationForm& rhs);
+    virtual ~ShrubberyCreationForm();
+
+    virtual void performAction() const;
+};
+
+#endif

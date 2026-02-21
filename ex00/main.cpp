@@ -11,6 +11,10 @@ int main(void) {
       std::cout << a << std::endl;
       a.IncrementGrade();
       std::cout << a << std::endl;
+      Bureaucrat b = Bureaucrat("b", 2);
+      std::cout << b << std::endl;
+      b.IncrementGrade();
+      std::cout 
     } catch (const std::exception &e) {
       std::cerr << e.what() << std::endl;
     }

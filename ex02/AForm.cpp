@@ -36,7 +36,8 @@ AForm::~AForm()
     std::cout << "destructor called !!" << std::endl;
 }
 
-void AForm::beSigned(const Bureaucrat &bureaucrat) {
+void AForm::beSigned(const Bureaucrat &bureaucrat)
+{
     if (bureaucrat.getGrade() <= _signGrade) {
       _isSigned = true;
     } else {

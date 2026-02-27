@@ -58,7 +58,7 @@ std::ostream &operator<<(std::ostream &os, const AForm &form) {
 void AForm::execute(Bureaucrat const & executor) const {
     if (!this->_isSigned)
         throw AForm::FormNotSignedException();
-  if (executor.getGrade() > static_cast<unsigned int>(this->_execGrade))
+    if (executor.getGrade() > static_cast<unsigned int>(this->_execGrade))
         throw AForm::GradeTooLowException();
 
     this->performAction();

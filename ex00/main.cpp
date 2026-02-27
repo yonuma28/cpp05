@@ -14,6 +14,16 @@ int main(void) {
     } catch (const std::exception &e) {
       std::cerr << e.what() << std::endl;
     }
+	try {
+		Bureaucrat b = Bureaucrat("b", 2);
+		std::cout << b << std::endl;
+		b.IncrementGrade();
+		std::cout << b << std::endl;
+		b.DecrementGrade();
+		std::cout << b << std::endl;
+	} catch (const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
   }
 
   std::cout << '\n';

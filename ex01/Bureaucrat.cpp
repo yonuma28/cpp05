@@ -40,14 +40,14 @@ unsigned int Bureaucrat::getGrade() const
 }
 
 void Bureaucrat::IncrementGrade() {
-    if (_grade - 1 <= Bureaucrat::highestGrade) {
+    if (_grade - 1 < Bureaucrat::highestGrade) {
       throw GradeTooHighException();
     }
     _grade--;
 }
   
 void Bureaucrat::DecrementGrade() {
-    if (Bureaucrat::lowestGrade <= _grade + 1) {
+    if (Bureaucrat::lowestGrade < _grade + 1) {
         throw GradeTooLowException();
     }
     _grade++;

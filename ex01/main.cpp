@@ -54,7 +54,7 @@ int main(void) {
   std::cout << "----------------NG----------------" << std::endl;
   try {
     Bureaucrat a = Bureaucrat("a", 10);
-    Form b = Form("b", 1, 1);
+    Form b = Form("b", 2, 2);
     std::cout << b << std::endl;
     b.beSigned(a);
     std::cout << b << std::endl;

@@ -36,7 +36,8 @@ Form::~Form()
     std::cout << "destructor called !!" << std::endl;
 }
 
-void Form::beSigned(const Bureaucrat &bureaucrat) {
+void Form::beSigned(const Bureaucrat &bureaucrat)
+{
     if (bureaucrat.getGrade() <= _signGrade) {
       _isSigned = true;
     } else {

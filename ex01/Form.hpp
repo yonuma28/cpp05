@@ -1,46 +1,48 @@
 #ifndef FORM_HPP
- # define FORM_HPP
+#define FORM_HPP
 
-# include "Bureaucrat.hpp"
+#include <exception>
+#include <iostream>
+#include <string>
 
 class Bureaucrat;
 
 class Form
 {
-    private:
-        const std::string   _name;
-        bool                _isSigned;
-        unsigned int        _signGrade;
-        unsigned int        _execGrade;
+  private:
+    const std::string _name;
+    bool _isSigned;
+    const int _signGrade;
+    const int _execGrade;
 
-    public:
-        // OCF
-        Form(const std::string& name, const int signGrade, const int execGrade);
-        Form(const Form& copy);
-        Form& operator=(const Form& copy);
-        ~Form();
+    Form();
 
-        //getter
-        const std::string&  getName() const;
-        bool          getSigned() const;
-        unsigned int  getRequiredSign() const;
-        unsigned int  getRequiredExecute() const;
+  public:
+    Form(const std::string &name, int signGrade, int execGrade);
+    Form(const Form &other);
+    Form &operator=(const Form &other);
+    ~Form();
 
-        //ex02
-        void    beSigned(const Bureaucrat& Bureaucrat);
+    const std::string &getName() const;
+    bool getSigned() const;
+    int getRequiredSign() const;
+    int getRequiredExecute() const;
 
-        //error
-        class GradeTooHighException : public std::exception {
-            virtual const char *what() const throw();
-        };
-        class GradeTooLowException : public std::exception {
-            virtual const char *what() const throw();
-        };
+    void beSigned(const Bureaucrat &bureaucrat);
 
-        static const int highestGrade = 1;
-        static const int lowestGrade = 150;
+    class GradeTooHighException : public std::exception
+    {
+      public:
+        virtual const char *what() const throw();
+    };
+
+    class GradeTooLowException : public std::exception
+    {
+      public:
+        virtual const char *what() const throw();
+    };
 };
 
-std::ostream &operator<<(std::ostream &os, const Form &form);
+std::ostream &operator<<(std::ostream &out, const Form &form);
 
-# endif //FORM_HPP
+#endif

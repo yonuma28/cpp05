@@ -24,11 +24,6 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
-const std::string &RobotomyRequestForm::getTarget() const
-{
-    return _target;
-}
-
 void RobotomyRequestForm::performAction() const
 {
     static bool seeded = false;

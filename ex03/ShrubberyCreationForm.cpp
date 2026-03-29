@@ -24,11 +24,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
 
-const std::string &ShrubberyCreationForm::getTarget() const
-{
-    return _target;
-}
-
 void ShrubberyCreationForm::performAction() const
 {
     std::ofstream output((_target + "_shrubbery").c_str());
